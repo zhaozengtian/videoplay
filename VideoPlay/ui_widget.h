@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'widget.ui'
 **
-** Created: Mon May 1 00:21:45 2017
+** Created: Mon May 1 19:44:16 2017
 **      by: Qt User Interface Compiler version 4.7.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -35,7 +35,8 @@ public:
     QHBoxLayout *horizontalLayout;
     QPushButton *btnMedia;
     QPushButton *btnPlay;
-    QPushButton *btnStop;
+    QPushButton *btnXia;
+    QPushButton *btnShang;
     QSpacerItem *horizontalSpacer_2;
     QPushButton *btnSet;
     QFrame *frameVolume;
@@ -44,7 +45,7 @@ public:
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QString::fromUtf8("Widget"));
-        Widget->resize(706, 312);
+        Widget->resize(626, 312);
         Widget->setMaximumSize(QSize(16777215, 16777215));
         gridLayout = new QGridLayout(Widget);
         gridLayout->setSpacing(6);
@@ -75,6 +76,7 @@ public:
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         btnMedia = new QPushButton(Widget);
         btnMedia->setObjectName(QString::fromUtf8("btnMedia"));
+        btnMedia->setStyleSheet(QString::fromUtf8(""));
 
         horizontalLayout->addWidget(btnMedia);
 
@@ -84,10 +86,16 @@ public:
 
         horizontalLayout->addWidget(btnPlay);
 
-        btnStop = new QPushButton(Widget);
-        btnStop->setObjectName(QString::fromUtf8("btnStop"));
+        btnXia = new QPushButton(Widget);
+        btnXia->setObjectName(QString::fromUtf8("btnXia"));
+        btnXia->setStyleSheet(QString::fromUtf8(""));
 
-        horizontalLayout->addWidget(btnStop);
+        horizontalLayout->addWidget(btnXia);
+
+        btnShang = new QPushButton(Widget);
+        btnShang->setObjectName(QString::fromUtf8("btnShang"));
+
+        horizontalLayout->addWidget(btnShang);
 
         horizontalSpacer_2 = new QSpacerItem(37, 13, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -122,9 +130,17 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QApplication::translate("Widget", "Widget", 0, QApplication::UnicodeUTF8));
-        btnMedia->setText(QApplication::translate("Widget", "\345\252\222\344\275\223\345\272\223", 0, QApplication::UnicodeUTF8));
+        btnMedia->setText(QApplication::translate("Widget", "\346\267\273\345\212\240\350\265\204\346\272\220", 0, QApplication::UnicodeUTF8));
         btnPlay->setText(QApplication::translate("Widget", "\346\222\255\346\224\276", 0, QApplication::UnicodeUTF8));
-        btnStop->setText(QApplication::translate("Widget", "\345\201\234\346\255\242", 0, QApplication::UnicodeUTF8));
+#ifndef QT_NO_WHATSTHIS
+        btnXia->setWhatsThis(QApplication::translate("Widget", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/Resources/gnome-shutdown.png\" /></p></body></html>", 0, QApplication::UnicodeUTF8));
+#endif // QT_NO_WHATSTHIS
+        btnXia->setText(QApplication::translate("Widget", "\344\270\213\344\270\200\346\233\262", 0, QApplication::UnicodeUTF8));
+        btnShang->setText(QApplication::translate("Widget", "\344\270\212\344\270\200\346\233\262", 0, QApplication::UnicodeUTF8));
         btnSet->setText(QApplication::translate("Widget", "\346\240\207\346\270\205", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 

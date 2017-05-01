@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resources/add.png</file>
+        <file>Resources/down.png</file>
+        <file>Resources/gnome-run.png</file>
+        <file>Resources/gnome-shutdown.png</file>
+        <file>Resources/go-next.png</file>
+        <file>Resources/gtk-media-forward-ltr.png</file>
+        <file>Resources/gtk-media-forward-rtl.png</file>
+        <file>Resources/gtk-media-next-rtl.png</file>
+        <file>Resources/gtk-media-pause.png</file>
+        <file>Resources/gtk-media-play-ltr.png</file>
+    </qresource>
+</RCC>

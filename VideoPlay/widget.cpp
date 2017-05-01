@@ -25,12 +25,16 @@ Widget::Widget(QWidget *parent) :
     volumeSlider = new Phonon::VolumeSlider(audioOutput, ui->frameVolume);//音量调节对象初始化(指定它的父组件为frameVolume)
     audioOutput->setVolume(0.5);//设置默认的音量
 
+    *i=0;
+    file = new QString[MAXFILE];
+
 
     videoWidget->installEventFilter(this);//安装事件过滤器
 }
 
 Widget::~Widget()
 {
+    delete[] file;
     delete ui;
 }
 
@@ -48,12 +52,17 @@ void Widget::changeEvent(QEvent *e)
 
 void Widget::on_btnMedia_clicked()
 {
+    static int j=0;
+     if(j == MAXFILE)
+         return;
     QString filename = QFileDialog::getOpenFileName(this, tr("打开文件"), tr("F:\\music"), "*.mpg; *.avi; *.wmv; *.mp4; *.mp3;;*.*");
+    file[j++] = filename;
     if(filename.isEmpty() || filename.isNull())
     {
         return;
     }
-    mediaObject->setCurrentSource(Phonon::MediaSource(filename));
+    if(j == 1)
+    mediaObject->setCurrentSource(Phonon::MediaSource(file[0]));
 }
 
 //播放与暂停
@@ -71,8 +80,6 @@ void Widget::on_btnPlay_clicked(bool checked)
     }
 }
 
-
-
 void Widget::resizeEvent(QResizeEvent * event)
 {
     videoWidget->setGeometry(ui->frameVideo->rect());
@@ -80,24 +87,49 @@ void Widget::resizeEvent(QResizeEvent * event)
     volumeSlider->setGeometry(ui->frameVolume->rect());
 }
 
-//停止播放
-void Widget::on_btnStop_clicked()
-{
+//上一曲
+void Widget::on_btnShang_clicked()
+{  
+
+    *(this->i)--;
+    if(*(this->i)<0 || *(this->i)>MAXFILE-1)
+    {
+        *(this->i)++;
+        return;
+    }
     mediaObject->stop();
+    mediaObject->setCurrentSource(Phonon::MediaSource(file[*(this->i)]));
+    ui->btnPlay->setText(tr("暂停"));
+    mediaObject->play();
 }
+//下一曲
+void Widget::on_btnXia_clicked()
+{
+
+    *(this->i)++;
+    if(*(this->i)<0 || *(this->i)>MAXFILE-1)
+    {
+        *(this->i)--;
+       return;
+    }
+    mediaObject->stop();
+    mediaObject->setCurrentSource(Phonon::MediaSource(file[*(this->i)]));
+    ui->btnPlay->setText(tr("暂停"));
+    mediaObject->play();
+}
+
  //标清 高清
 void Widget::on_btnSet_clicked()
 {
-       /* QMenu *mymenu=new QMenu;
+        /*QMenu *mymenu=new QMenu;
         QMenu *qing = mymenu->addMenu(tr("标清"));
         //QActionGroup *biaoqingGroup = new QActionGroup(biaoqing);
         //connect(biaoqingGroup,SIGNAL(triggered(QAction*)),this,SLOT(on_btnSet_clicked(QAction*)));
         QAction *biaoqing = qing->addAction(tr("标清"));
         QAction *gaoqing = qing->addAction(tr("高清"));
-        QAction *chaoqing = qing->addAction(tr("超清"));
-
+        QAction *chaoqing = qing->addAction(tr("超清"))
         ui->btnSet->setMenu(mymenu);
-*/
+        */
 }
 
 bool Widget::eventFilter(QObject * watched, QEvent * event)

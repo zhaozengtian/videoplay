@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'widget.h'
 **
-** Created: Mon May 1 01:04:18 2017
+** Created: Mon May 1 21:35:34 2017
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.2)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_Widget[] = {
        5,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -32,15 +32,17 @@ static const uint qt_meta_data_Widget[] = {
 
  // slots: signature, parameters, type, tag, flags
        8,    7,    7,    7, 0x08,
-      37,   29,    7,    7, 0x08,
-      62,    7,    7,    7, 0x08,
-      84,    7,    7,    7, 0x08,
+      30,    7,    7,    7, 0x08,
+      58,   50,    7,    7, 0x08,
+      83,    7,    7,    7, 0x08,
+     105,    7,    7,    7, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_Widget[] = {
-    "Widget\0\0on_btnStop_clicked()\0checked\0"
+    "Widget\0\0on_btnShang_clicked()\0"
+    "on_btnXia_clicked()\0checked\0"
     "on_btnPlay_clicked(bool)\0on_btnMedia_clicked()\0"
     "on_btnSet_clicked()\0"
 };
@@ -74,13 +76,14 @@ int Widget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: on_btnStop_clicked(); break;
-        case 1: on_btnPlay_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 2: on_btnMedia_clicked(); break;
-        case 3: on_btnSet_clicked(); break;
+        case 0: on_btnShang_clicked(); break;
+        case 1: on_btnXia_clicked(); break;
+        case 2: on_btnPlay_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 3: on_btnMedia_clicked(); break;
+        case 4: on_btnSet_clicked(); break;
         default: ;
         }
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }

@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <phonon>
 
+#define MAXFILE 2  //最大读入文件数
+
 namespace Ui {
     class Widget;
 }
@@ -28,9 +30,11 @@ private:
     Phonon::AudioOutput *audioOutput;   //音频输出
     Phonon::SeekSlider *slider;         //播放进度条
     Phonon::VolumeSlider *volumeSlider; //音量调节
-
+    int  *i;
+    QString *file;
 private slots:
-    void on_btnStop_clicked();  //暂停
+    void on_btnShang_clicked();  //上一曲
+    void on_btnXia_clicked(); //
     void on_btnPlay_clicked(bool checked); //播放
     void on_btnMedia_clicked(); //
     void on_btnSet_clicked();
